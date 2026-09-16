@@ -24,9 +24,14 @@ public class Kaulins {
 	public static void main(String[] args) {
 		int reizes;
 		Scanner scan = new Scanner(System.in);
-		
+		do {
 		System.out.print("Cik reizes mest kauliņu? ");
+		while(!scan.hasNextInt()) {
+		System.out.print("Cik reizes mest kauliņu? ");
+		scan.next();
+		}
 		reizes = scan.nextInt();
+		}while(reizes < 1);
 		System.out.println("Mazākais skaitlis no viesiem metieniem: " + MestKaulinu(reizes));
 
 		scan.close();
